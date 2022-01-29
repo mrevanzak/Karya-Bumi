@@ -1,0 +1,158 @@
+@use "../../variables";
+
+.hero {
+  padding-top: 35px;
+  padding-bottom: 35px;
+  min-height: calc(100vh - 94px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__main {
+    display: flex;
+    height: 80%;
+
+    &-content {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+      h1 {
+        font-family: Helvetica;
+        font-weight: bold;
+        font-size: 64px;
+        line-height: 77px;
+        letter-spacing: -0.015em;
+
+        color: #343534;
+
+        @include variables.breakpoints("lg") {
+          font-size: 50px;
+          line-height: 62px;
+        }
+
+        @include variables.breakpoints("xs") {
+          font-size: 42px;
+          line-height: 52px;
+        }
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 28px;
+        margin-top: 1rem;
+
+        color: #000000;
+
+        @include variables.breakpoints("sm") {
+          font-size: 16px;
+          line-height: 22px;
+        }
+
+        @include variables.breakpoints("xs") {
+          font-size: 14px;
+        }
+      }
+
+      button {
+        background: #315343;
+        border-radius: 11.7178px;
+        width: 143px;
+        padding: 0.8rem 1rem;
+        outline: none;
+        border: 0;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: 0.005em;
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+
+        color: #ffffff;
+
+        @include variables.breakpoints("xs") {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    }
+
+    &-image {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+
+      img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+
+        @include variables.breakpoints("sm") {
+          width: 40vh;
+        }
+      }
+    }
+
+    @include variables.breakpoints("sm") {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__features {
+    height: 20%;
+    margin-top: 1rem;
+    h6 {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 22px;
+      text-align: center;
+      letter-spacing: 0.4em;
+
+      color: #444444;
+
+      @include variables.breakpoints("sm") {
+        font-size: 16px;
+      }
+
+      @include variables.breakpoints("xs") {
+        font-size: 14px;
+      }
+    }
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 76px;
+
+      li {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+
+        color: #202020;
+
+        @include variables.breakpoints("sm") {
+          font-size: 16px;
+          text-align: left;
+
+          &:nth-child(even) {
+            text-align: right;
+          }
+        }
+
+        @include variables.breakpoints("xs") {
+          font-size: 14px;
+        }
+      }
+
+      @include variables.breakpoints("sm") {
+        flex-direction: column;
+        margin-top: 2rem;
+      }
+    }
+  }
+}

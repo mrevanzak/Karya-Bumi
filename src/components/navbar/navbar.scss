@@ -1,0 +1,73 @@
+@use "../../variables";
+
+.navbar {
+  background: #fff;
+  box-shadow: 0px 0px 39px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 94px;
+  position: sticky;
+  top: 0;
+
+  &__logo {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 40px;
+
+    a {
+      color: #525452;
+
+      span {
+        color: #3a5a4b;
+      }
+    }
+  }
+
+  &__menu {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #424342;
+
+    ul {
+      display: flex;
+
+      @include variables.breakpoints("md") {
+        display: none;
+      }
+
+      li:not(:last-child) {
+        margin-right: 4vw;
+      }
+    }
+  }
+
+  &__mobile {
+    display: none;
+    .burger .burger-lines,
+    .burger .burger-lines:after,
+    .burger .burger-lines:before {
+      background-color: #424342;
+    }
+
+    @include variables.breakpoints("md") {
+      display: block;
+
+      &-container {
+        padding: 2rem;
+        position: absolute;
+        top: 94px;
+        right: 50px;
+        border-radius: 0 0 5px 5px;
+        background: #ffffff;
+        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}

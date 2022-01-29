@@ -1,0 +1,91 @@
+@use "../../variables";
+
+.footer {
+  background: #ffffff;
+  padding: 4.2rem;
+  display: flex;
+
+  &__logo {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 86.4px;
+    line-height: 101px;
+    // width: 6ch;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+
+    p {
+      color: #525452;
+    }
+
+    span {
+      color: #3a5a4b;
+    }
+
+    @include variables.breakpoints("lg") {
+      font-size: 4rem;
+      line-height: 5rem;
+    }
+
+    @include variables.breakpoints("sm") {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    @include variables.breakpoints("xs") {
+      justify-content: center;
+    }
+  }
+
+  &__text {
+    display: flex;
+    width: 70%;
+    justify-content: space-around;
+
+    &-container {
+      max-width: 280px;
+      color: #535553;
+      margin-right: 1rem;
+
+      &__content {
+        h6 {
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 20px;
+        }
+
+        p {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 17px;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 2rem;
+        }
+      }
+
+      @include variables.breakpoints("xs") {
+        &:first-child {
+          margin-bottom: 2rem;
+        }
+      }
+    }
+
+    @include variables.breakpoints("sm") {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    @include variables.breakpoints("xs") {
+      flex-direction: column;
+    }
+  }
+
+  @include variables.breakpoints("sm") {
+    flex-direction: column;
+  }
+}
