@@ -2,12 +2,13 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./hero.scss";
 import img from "../../assets/hero-img.png";
+import { Features } from "../../components";
 
 const Hero = () => {
   let navigate = useNavigate();
 
   return (
-    <div className="hero section__padding">
+    <div className="hero section__padding container">
       <div className="hero__main">
         <div className="hero__main-content">
           <h1>The finest goods and products.</h1>
@@ -28,16 +29,7 @@ const Hero = () => {
           <img src={img} alt="hero" />
         </div>
       </div>
-      <div className="hero__features">
-        <h6>RECENT SHIPMENTS</h6>
-        <ul>
-          <li>INDONESIA</li>
-          <li>THAILAND</li>
-          <li>SINGAPORE</li>
-          <li>MALAYSIA</li>
-          <li>BRAZIL</li>
-        </ul>
-      </div>
+      <Features />
     </div>
   );
 };

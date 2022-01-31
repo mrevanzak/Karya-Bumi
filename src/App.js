@@ -4,10 +4,8 @@ import { Footer, Hero } from "./containers";
 function App() {
   return (
     <div className="App">
-      <div className="container">
-        <Navbar />
-        <Hero />
-      </div>
+      <Navbar />
+      <Hero />
       <Footer />
     </div>
   );

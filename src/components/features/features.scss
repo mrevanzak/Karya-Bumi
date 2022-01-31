@@ -1,0 +1,57 @@
+@use "../../variables";
+
+.features {
+  height: 20%;
+  width: 100%;
+  margin-top: 1rem;
+  h6 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: 0.4em;
+
+    color: #444444;
+
+    @include variables.breakpoints("sm") {
+      font-size: 16px;
+    }
+
+    @include variables.breakpoints("xs") {
+      font-size: 14px;
+    }
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 76px;
+
+    li {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 22px;
+      text-align: center;
+
+      color: #202020;
+
+      @include variables.breakpoints("sm") {
+        font-size: 16px;
+        text-align: left;
+
+        &:nth-child(even) {
+          text-align: right;
+        }
+      }
+
+      @include variables.breakpoints("xs") {
+        font-size: 14px;
+      }
+    }
+
+    @include variables.breakpoints("sm") {
+      flex-direction: column;
+      margin-top: 2rem;
+    }
+  }
+}
