@@ -1,6 +1,7 @@
 import "./navbar.scss";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import Burger from "@animated-burgers/burger-squeeze";
 import "@animated-burgers/burger-squeeze/dist/styles.css";
 
@@ -48,13 +49,21 @@ const Navbar = () => {
         <Burger
           onClick={() => setToggleMenu(!toggleMenu)}
           isOpen={toggleMenu}
-          style={{ fontSize: 10 }}
+          style={{ fontSize: 12 }}
         />
-        {toggleMenu && (
-          <div className="navbar__mobile-container">
-            <Menu />
-          </div>
-        )}
+        <AnimatePresence>
+          {toggleMenu && (
+            <motion.div
+              className="navbar__mobile-container"
+              transition={{ ease: "easeInOut", duration: 0.5 }}
+              initial={{ x: 0 }}
+              animate={{ x: "100%" }}
+              exit={{ x: 0 }}
+            >
+              <Menu />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );
